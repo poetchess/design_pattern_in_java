@@ -1,4 +1,4 @@
-package poetchess.observer;
+package poetchess.observer.weather;
 
 import java.util.ArrayList;
 

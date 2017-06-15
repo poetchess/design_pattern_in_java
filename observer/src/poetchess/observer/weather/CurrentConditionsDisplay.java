@@ -1,4 +1,4 @@
-package poetchess.observer;
+package poetchess.observer.weather;
 
 /**
  * Created by poetchess on 17-6-13.
