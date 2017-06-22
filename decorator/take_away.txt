@@ -1,0 +1,32 @@
+Decorator Pattern:
+------------------
+    The decorator pattern attaches addtional responsibilities to an object
+    dynamically. Decorators provide a flexible alternative to subclassing for
+    extending functionality.
+
+
+Design Principle involved:
+--------------------------
+    Open-Closed principle:
+        Classes should be open for extension, but closed for modification.
+
+
+Chit Chat:
+----------
+    While inheritance is powerful, it doesn't always lead to the most flexible
+    or maintainable designs.
+
+    Besides code reuse through inheritance, there are ways of "inheriting" behavior
+    at runtime through composition and delegation. When inheriting behavior by
+    subclassing, that behavior is set statically at compile time. In addition,
+    all subclasses must inherit the same behavior. However, if extending an
+    object's behavior through composition, we can do this dynamically at runtime.
+
+    By dynamically composing objects, we can add new functionality by writing new
+    code rather than altering existing code.
+
+    While Open-Closed may seem like a contradiction, there are techniques for
+    allowing code to be extended without direct modification. However, applying
+    Open-Closed principle everywhere is wasteful, unnecessary and can lead to
+    complex, hard to understand code.
+
