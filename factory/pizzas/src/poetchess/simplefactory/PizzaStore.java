@@ -5,6 +5,8 @@ package poetchess.simplefactory;
  */
 public class PizzaStore {
 
+    // Object composition allows us to change behavior dynamically at runtime
+    // because we can swap in and out implementations.
     SimplePizzaFactory factory;
 
     public PizzaStore(SimplePizzaFactory factory) {
