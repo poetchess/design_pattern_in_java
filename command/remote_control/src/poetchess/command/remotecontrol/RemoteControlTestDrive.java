@@ -18,7 +18,7 @@ public class RemoteControlTestDrive {
         LightOnCommand kitchenLightOn = new LightOnCommand(kitchenLight);
         LightoffCommand kitchenLightOff = new LightoffCommand(kitchenLight);
 
-        CeilingFanOnCommand fanOn = new CeilingFanOnCommand(fan);
+        CeilingFanHighCommand fanHigh = new CeilingFanHighCommand(fan);
         CeilingFanOffCommand fanOff = new CeilingFanOffCommand(fan);
 
         HottubOnCommand hottubOn = new HottubOnCommand(hottub);
@@ -26,25 +26,33 @@ public class RemoteControlTestDrive {
 
         remote.setCommand(0, livingRoomLightOn, livingRoomLightOff);
         remote.setCommand(1, kitchenLightOn, kitchenLightOff);
-        remote.setCommand(2, fanOn, fanOff);
+        remote.setCommand(2, fanHigh, fanOff);
         remote.setCommand(3, hottubOn, hottubOff);
-
         System.out.println(remote);
 
         remote.onButtonPressed(0);
         remote.offButtonPressed(0);
+        System.out.println(remote);
+        remote.undoButtonPressed();
 
         remote.onButtonPressed(1);
         remote.offButtonPressed(1);
+        System.out.println(remote);
+        remote.undoButtonPressed();
 
         remote.onButtonPressed(2);
         remote.offButtonPressed(2);
+        System.out.println(remote);
+        remote.undoButtonPressed();
 
         remote.onButtonPressed(3);
         remote.offButtonPressed(3);
+        System.out.println(remote);
+        remote.undoButtonPressed();
 
         // NoCommand, nothing happens.
         remote.onButtonPressed(4);
         remote.offButtonPressed(4);
+        System.out.println(remote);
     }
 }

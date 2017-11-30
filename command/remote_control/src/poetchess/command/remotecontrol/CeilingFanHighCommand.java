@@ -3,18 +3,18 @@ package poetchess.command.remotecontrol;
 /**
  * Created by poetchess on 17-11-27.
  */
-public class CeilingFanOffCommand implements Command {
+public class CeilingFanHighCommand implements Command {
     CeilingFan fan;
     int prevSpeed;
 
-    public CeilingFanOffCommand(CeilingFan fan) {
+    public CeilingFanHighCommand(CeilingFan fan) {
         this.fan = fan;
     }
 
     @Override
     public void execute() {
         prevSpeed = fan.getSpeed();
-        fan.off();
+        fan.high();
     }
 
     @Override
