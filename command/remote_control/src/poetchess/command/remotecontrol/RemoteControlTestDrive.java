@@ -54,5 +54,20 @@ public class RemoteControlTestDrive {
         remote.onButtonPressed(4);
         remote.offButtonPressed(4);
         System.out.println(remote);
+
+        // Check the macro command
+        // Check the macro command
+        Command[] partyOn = {livingRoomLightOn, kitchenLightOff, fanHigh};
+        Command[] partyOff = {livingRoomLightOff, kitchenLightOn, fanOff};
+        Command partyOnMacro = new MacroCommand(partyOn);
+        Command partyOffMacro = new MacroCommand(partyOff);
+        remote.setCommand(4, partyOnMacro, partyOffMacro);
+        System.out.println("Pushing Macro on:");
+        remote.onButtonPressed(4);
+        System.out.println("Pushing Macro off:");
+        remote.offButtonPressed(4);
+        System.out.println(remote);
+        System.out.println("Undo Macro:");
+        remote.undoButtonPressed();
     }
 }
