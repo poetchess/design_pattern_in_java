@@ -8,20 +8,25 @@ import java.util.Iterator;
 public class Waitress {
     private Menu pancakeHouseMenu;
     private Menu dinerMenu;
+    private Menu cafeMenu;
 
-    public Waitress(Menu pancakeHouseMenu, Menu dinerMenu) {
+    public Waitress(Menu pancakeHouseMenu, Menu dinerMenu, Menu cafeMenu) {
         this.pancakeHouseMenu = pancakeHouseMenu;
         this.dinerMenu = dinerMenu;
+        this.cafeMenu = cafeMenu;
     }
 
     public void printMenu() {
         Iterator<MenuItem> pancakeIterator = pancakeHouseMenu.createIterator();
         Iterator<MenuItem> dinerIterator = dinerMenu.createIterator();
+        Iterator<MenuItem> cafeIterator = cafeMenu.createIterator();
 
         System.out.println("MENU\n---\nBREAKFAST");
         printMenu(pancakeIterator);
         System.out.println("\nLAUNCH");
         printMenu(dinerIterator);
+        System.out.println("\nDINNER");
+        printMenu(cafeIterator);
     }
 
     private void printMenu(Iterator<MenuItem> iterator) {
@@ -36,6 +41,7 @@ public class Waitress {
     public void printVegetarianMenu() {
         printVegeratianMenu(pancakeHouseMenu.createIterator());
         printVegeratianMenu(dinerMenu.createIterator());
+        printVegeratianMenu(cafeMenu.createIterator());
     }
 
     public boolean isItemVegetarian(String name) {
@@ -45,6 +51,10 @@ public class Waitress {
         }
         Iterator<MenuItem> dinnerIterator = dinerMenu.createIterator();
         if (isVegetarian(name, dinnerIterator)) {
+            return true;
+        }
+        Iterator<MenuItem> cafeIterator = cafeMenu.createIterator();
+        if (isVegetarian(name, cafeIterator)) {
             return true;
         }
         return false;
